@@ -1,19 +1,8 @@
 #!/usr/bin/env bash
 
-output=""
 
-if (( $1 % 3 == 0 )); then
-    output="${output}Pling"
-fi
-if (( $1 % 5 == 0 )); then
-    output="${output}Plang"
-fi
-if (( $1 % 7 == 0 )); then
-    output="${output}Plong"
-fi
+(( $1 % 3 )) || result+=Pling
+(( $1 % 5 )) || result+=Plang
+(( $1 % 7 )) || result+=Plong
 
-if [ -z "$output" ]; then
-    echo $1
-else
-    echo "$output"
-fi
+echo ${result:-$1}
