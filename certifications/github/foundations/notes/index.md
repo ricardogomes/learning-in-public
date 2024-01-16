@@ -279,42 +279,89 @@ Questions for later review
 
 #### Questions
 
-What's the difference between GitHub organization accounts and GitHub personal/user accounts? 
+- What's the difference between GitHub organization accounts and GitHub personal/user accounts? 
+    - **Organizational accounts are shared accounts, while personal/user accounts are for individuals**
+    - You pay more for organization accounts versus personal/user accounts
+    - They're exactly the same
+    - Personal/user accounts have more access than organization accounts
+- What's the best reason to decide to upgrade to the GitHub Enterprise product? 
+    - Because you want to use GitHub Actions and Codespaces
+    - Because your VP needs to use GitHub Insights
+    - **Because you want to centrally manage users and repositories across multiple organizations**
+    - Because you want to use the team pull request reviewers feature.
+- What's the purpose of a team? 
+    - A team allows you to manage an organization account
+    - A team allows you to control permission levels for an enterprise
+    - A team allows a single user to sign in using different accounts credentials
+    - **A team is intended to reflect a company or group's structure. It's used to provide cascading access permissions and make it easy to notify all team members via mentions**
+- What's a function you can execute on GitHub Mobile? 
+    - Check out branches with pull requests and view CI statuses
+    - Compare changed images
+    - Add and clone repositories
+    - **Manage, triage, and clear notifications from github.com**
 
-Organizational accounts are shared accounts, while personal/user accounts are for individuals
+### 4 - Introduction to GitHub Copilot
+- first at-scale AI developer tool
+- draws context from comments and code to suggest individual lines and whole functions
+- Powered by OpenAI Codex
+- Generative Pretrained Language Model
+- GitHub Copilot type:
+    - Individual
+    - Business
+        - control who can use Copilot in your organizations
+        - Features:
+            - code completion
+            - chat in IDE and mobile
+            - security vulnerabilities filter
+            - code referencing
+            - public code filter
+            - IP indemnity
+            - enterprise-grade security, safety and privacy
+    - Enterprise
+        - available through GitHub Entreprise Cloud
+        - every thing in Business
+        - adicional layer of personalization
+- GitHub Copilot X
+    - AI Assistant for the entire development lifecyle
+    - Features:
+        - ChatGTP-lije experience with GitHub Copilot Chat
+        - Copilot for Pull Requests
+        - AI generated answers about documentation
+        - Copilot for CLI
+- available in IDEs
+    - GitHub website
+    - Visual Studio Code
+    - Visual Studio
+    - JetBrains
+    - Neovim
+- GitHub Copilot Configuration
+    - enable / disable line suggestions
+- GitHub Copilot Troubleshooting
+    - Run diagnostics
+#### Questions
+What is GitHub Copilot? 
 
-You pay more for organization accounts versus personal/user accounts
+GitHub Copilot is an AI pair programmer that you can use to get code suggestions.
 
-They're exactly the same
+GitHub Copilot is OpenAI Codex, a new AI system created by OpenAI.
 
-Personal/user accounts have more access than organization accounts
-2. What's the best reason to decide to upgrade to the GitHub Enterprise product? 
+GitHub Copilot is a JavaScript public repository and is one of the best supported languages.
 
-Because you want to use GitHub Actions and Codespaces
+GitHub Copilot can write a comment describing logic and you can add your suggested code to implement the solution.
+2. What are the supported integrated development environment extensions for GitHub Copilot? 
 
-Because your VP needs to use GitHub Insights
+Visual Studio Code and Visual Studio
 
-Because you want to centrally manage users and repositories across multiple organizations
+GitHub.com, Visual Studio Code, Visual Studio, Neovim, and JetBrains
 
-Because you want to use the team pull request reviewers feature.
-3. What's the purpose of a team? 
+Visual Studio Code, Visual Studio, Neovim, and JetBrains
+3. What is GitHub Copilot X? 
 
-A team allows you to manage an organization account
+GitHub's vision for the future of AI-powered software development.
 
-A team allows you to control permission levels for an enterprise
+An Artificial Intelligence (AI) pair programmer that you can use to get suggestions for whole lines or entire functions right inside your editor.
 
-A team allows a single user to sign in using different accounts credentials
-
-A team is intended to reflect a company or group's structure. It's used to provide cascading access permissions and make it easy to notify all team members via mentions
-4. What's a function you can execute on GitHub Mobile? 
-
-Check out branches with pull requests and view CI statuses
-
-Compare changed images
-
-Add and clone repositories
-
-Manage, triage, and clear notifications from github.com
+A product focused on organizations to help them be more productive, secure, and fulfilled.
 
 ## ToDos
 
