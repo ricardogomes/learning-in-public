@@ -200,6 +200,122 @@ Questions for later review
     3. **git help**
 
 
+### 3 Introduction to GitHub's Products
+
+- GitHub account types:
+    - Personal: every person has a personal account, with GitHub Free or GitHub Pro
+    - Organization: 
+        - can't signin to an organization. 
+        - Each person can be a menber of multiple accounts. 
+        - Individual accounts can have different roles in a organization
+        - Only organization owners and security managers can manage settings
+    - Entreprise:
+        - enable central management of policies and billing for multiple organizations
+- GitHub plans:
+    - GitHub Free:
+        - unlimited public and private repos
+        - unlimited collaborators
+        - GitHub community support
+        - Dependabot alerts
+        - two-factor authentication enforcement
+        - 500MB GitHub Packages storage
+        - 120 GitHub Codespaces core hours / month
+        - 15GB GitHub Codespaces storage / month
+        - 2000 minutes GitHub Actions
+        - GitHub Actions deployment protection for public repositories
+        - GitHub Free for organizations has a limited set of features on private repos
+    - GitHub Pro
+        - GitHub Support via email
+        - 3000 minutes GitHub Actions / month
+        - 2GB GitHub Packages storage
+        - 180 GitHub Codespaces core hours / month
+        - 20GB HitHub Codespaces storage /month
+        - Advanced tools and insights in private repositories:
+            - Required pull request reviewers
+            - Multiple pull request reviewers
+            - Protected Branches
+            - Code owners
+            - Autolinked references
+            - GitHub Pages
+            - Wikis
+            - Insights: pulse, contributors, traffic, commits, code frequency, network and forks
+    - GitHub Team: GitHub Pro for organizations
+        - option to enable/disable Codespaces
+    - GitHub Enterprise
+        - greater support
+        - extra security
+        - compliance
+        - deployment controls
+        - Authentication with SAML single sign-on
+        - Access provisioning with SAML or SCIM
+        - Deployment protection rules with Actions for private or internal repos GitHub Connect
+        - Option to purchase GitHub Advanced Security
+        - Two Options:
+            - GitHub Enterprise Server: self-hosted
+            - GitHub Entreprise Cloud
+                - 50000 minutes Actions / month
+                - 50GB Packages Storage
+                - SLA 99,9% uptime
+- GitHub access mechanisms:
+    - GitHub website
+    - GitHub Mobile
+        - manage, triage and clear notifications
+        - read, review and collaborate on issues and pull requests
+        - edit files in pull requests
+        - search, browse and interact with users, repos and organizations
+        - receive push notifications when someone mentions your username
+        - schedule push notifications for specific custom hours
+        - secure GitHub.com account with two-factor auth
+        - verify your sign-in attempts on unrecognized devices
+    - GitHub Desktop
+        - add and clone repos
+        - add changes to your commit interactively
+        - quickly add co-authors to your commit
+        - check out branches with pull requests and view CI statuses
+        - compare changed images
+- GitHub billing:
+    - bills separate for each account: personal, organization, entreprise
+    - subscriptions + usage-based 
+
+#### Questions
+
+What's the difference between GitHub organization accounts and GitHub personal/user accounts? 
+
+Organizational accounts are shared accounts, while personal/user accounts are for individuals
+
+You pay more for organization accounts versus personal/user accounts
+
+They're exactly the same
+
+Personal/user accounts have more access than organization accounts
+2. What's the best reason to decide to upgrade to the GitHub Enterprise product? 
+
+Because you want to use GitHub Actions and Codespaces
+
+Because your VP needs to use GitHub Insights
+
+Because you want to centrally manage users and repositories across multiple organizations
+
+Because you want to use the team pull request reviewers feature.
+3. What's the purpose of a team? 
+
+A team allows you to manage an organization account
+
+A team allows you to control permission levels for an enterprise
+
+A team allows a single user to sign in using different accounts credentials
+
+A team is intended to reflect a company or group's structure. It's used to provide cascading access permissions and make it easy to notify all team members via mentions
+4. What's a function you can execute on GitHub Mobile? 
+
+Check out branches with pull requests and view CI statuses
+
+Compare changed images
+
+Add and clone repositories
+
+Manage, triage, and clear notifications from github.com
+
 ## ToDos
 
 - [ ] the various uses of git reset as well as the pointers like HEAD and HEAD^
