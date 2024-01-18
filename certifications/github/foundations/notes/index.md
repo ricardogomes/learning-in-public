@@ -339,29 +339,89 @@ Questions for later review
 - GitHub Copilot Troubleshooting
     - Run diagnostics
 #### Questions
-What is GitHub Copilot? 
+- What is GitHub Copilot? 
+    - **GitHub Copilot is an AI pair programmer that you can use to get code suggestions.**
+    - GitHub Copilot is OpenAI Codex, a new AI system created by OpenAI.
+    - GitHub Copilot is a JavaScript public repository and is one of the best supported languages.
+    - GitHub Copilot can write a comment describing logic and you can add your suggested code to implement the solution.
+- What are the supported integrated development environment extensions for GitHub Copilot? 
+    - Visual Studio Code and Visual Studio
+    - GitHub.com, Visual Studio Code, Visual Studio, Neovim, and JetBrains
+    - **Visual Studio Code, Visual Studio, Neovim, and JetBrains** (extensions, if not, github.com also has support for copilot)
+- What is GitHub Copilot X? 
+    - **GitHub's vision for the future of AI-powered software development.**
+    - An Artificial Intelligence (AI) pair programmer that you can use to get suggestions for whole lines or entire functions right inside your editor.
+    - A product focused on organizations to help them be more productive, secure, and fulfilled.
 
-GitHub Copilot is an AI pair programmer that you can use to get code suggestions.
-
-GitHub Copilot is OpenAI Codex, a new AI system created by OpenAI.
-
-GitHub Copilot is a JavaScript public repository and is one of the best supported languages.
-
-GitHub Copilot can write a comment describing logic and you can add your suggested code to implement the solution.
-2. What are the supported integrated development environment extensions for GitHub Copilot? 
-
-Visual Studio Code and Visual Studio
-
-GitHub.com, Visual Studio Code, Visual Studio, Neovim, and JetBrains
-
-Visual Studio Code, Visual Studio, Neovim, and JetBrains
-3. What is GitHub Copilot X? 
-
-GitHub's vision for the future of AI-powered software development.
-
-An Artificial Intelligence (AI) pair programmer that you can use to get suggestions for whole lines or entire functions right inside your editor.
-
-A product focused on organizations to help them be more productive, secure, and fulfilled.
+### 5 - Code with GitHub Codespaces
+- GitHub Codespaces is a fully configured development environment hosted in the cloud
+- GitHub Codespaces lifecycle:
+    - Creating a Codespace
+        - Can be done in GitHub.com, VSCode or GitHub CLI
+        - From a GitHub template or any tempalte repository on GitHub.com to start a new project
+        - From a branch in a repository
+        - From an open pull request
+        - From a commit in the commit history
+        - When creating:
+            - VM and storage are assigned to the Codespace
+            - A container is created
+            - A connection to the Codespace is made
+            - A post-creation setup is made
+    - Rebuilding a Codespace
+        - images from cache are used to speed up
+        - can perform full rebuid to clear cache
+        - changes outside /workspace are cleared
+        - changes inside /workspace are preserved
+    - Stopping a Codespace
+    - Deleting a Codespace
+        - inactive codespaces for 30 days are deleted (configurable)
+- Differences between GitHub.dev and GitHub Codespaces:
+    - no associated compute on github.dev
+    - no terminal on github.dev
+    - only subset of extensions on github.dev
+    - can start on github.dev and move to codespaces
+- When using new Codespaces each time we should push regularly
+- When using long-running Codespaces we should pull each time we start working
+- Repo admins can enable Codespaces prebuilds for a repository to speed up Codespace creation
+- When conneting to Codespace via VSCode we must enable auto save
+- 30 minutes of inactivity timeout stops the Codespace (configurable)
+- A stopped Codespace only incurs storage costs
+- Customization
+    - Settings Sync
+    - dotfiles: can use dotfiles repository
+    - rename auto-generated name
+    - change shell
+    - change machine type
+    - set up default editor:
+        - VSCode Desktop
+        - VSCode Web
+        - JetBrains Gateway
+        - JupyterLab
+    - set default region
+    - set stop timeout
+    - set auto deletion
+    - add extensions or plugins (VSCode Desktop or Web | Jetbrains Marketplace)
+- can configure development container per repository
+    - docker containers configured for the project
+#### Questions
+- Which directory is the clone placed after creating a Codespace? 
+    - **/workspaces directory**
+    - /temp directory
+    - ~/.bashrc directory
+    - Linux directory
+- What's the maximum number of Codespaces that you can create per repository or branch? 
+    - You can only create two Codespaces.
+    - You can create a total of ten Codespaces.
+    - You can create a total of thirty Codespaces.
+    - **You can create an unlimited number of Codespaces per repository or branch, depending upon available space. When you reach an upper amount of resources, a message displays that an existing Codespace needs to removed/deleted before a new Codespace can be created.**
+- What happens when Codespace loses internet connectivity? 
+    - **If the connection to the internet is lost while working in a Codespace, you aren't able to access your Codespace.**
+    - Codespace doesn't require an internet connection. I can access my Codespace regardless if I lose connectivity.
+    - If you lose internet connection while working on your Codespace, your changes aren't saved.
+- What defines the beginning of a Codespace's lifecycle? 
+    - **A Codespace's lifecycle begins when you create a Codespace and ends when you delete it.**
+    - A Codespace's lifecycle begins immediately when GitHub is opened and ends when the software is closed.
+    - A Codespace's lifecycle begins when a repository is created and ends when it's deleted.
 
 ## ToDos
 
