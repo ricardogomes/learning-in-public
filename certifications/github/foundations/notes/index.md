@@ -423,9 +423,107 @@ Questions for later review
     - A Codespace's lifecycle begins immediately when GitHub is opened and ends when the software is closed.
     - A Codespace's lifecycle begins when a repository is created and ends when it's deleted.
 
+
+### 6 - Manage you work with GitHub Projects
+- Projects connect your planning directly to your work
+- Built like a spreadsheet, can filter, sort and group issues and pull requests
+- Projects vs Projects Classic
+  - Classic: Boards | New: Boards, Lists, Timeline Layout
+  - Classic: Columns and Cards | New: Sort, rank and group by custom fields
+  - Classic: Progress Bar | New: Visuals
+  - Classic: Column Presets | New: GraphQL API and Columns
+- Custom Field Types:
+  - Text
+  - Number
+  - Date
+  - Iteration: Sprints, cycles, quarterly roadmaps, custom ranges
+  - Single Select
+- Build an Organization level Project
+- Organize Project
+- Manage Project
+- Automations
+  - GraphQL ProjectsV2 API
+  - GitHub app Project scopes
+  - Webhooks events
+  - GitHub Actions to automate adding issues
+- Insigts
+  - Create visuals to understand your work
+  - Custom Bar, Column, Line and Stacked Area Charts
+  - Persist and Share Charts
+- Tokenized filtering 
+- Saved views
+- Realtime project updates and user presense indicators
+#### Questions
+- What Project descriptor will automatically save when you change it? 
+  - **Project name**
+  - Project description
+  - Project README
+- What does an iteration field help you do in Projects? 
+  - Allows you to keep track of the various changes made to an issue or pull request.
+  - Allows you to reverse the changes you made to your Project.
+  - **Allows you to create sequential phases of your project and group issues and pull request based on the phase.**
+- What field can you use in order to make a Priority grouping like High, Medium, and Low in your Project? 
+  - Date
+  - **Single select**
+  - Iteration field
+- What is the easiest way to add automation to your Project? 
+  - GraphQL API
+  - **Built-in Automation**
+  - GitHub Actions
+- What is the name of the section where you can edit the section where you change the visibility of your Project and delete or close your Project? 
+  -Red Zone
+  - Visibility and Access
+  - **Danger Zone**
+  
+### 7 Communicate Effectively on GitHub using Markdown
+- Markdown
+  - emphasis: *italic* _italic_ **bold** __bold__  \* escape 
+  - headings # 
+  - Lists
+    1. 
+    1. 
+    1.
+  - Images ![]()
+  - Links []()
+  - Tables
+    First|Second
+    -|-
+    1|2
+    3|4
+  - Quotes > 
+  - inline html
+  - code backtick `àsasd`
+- Markdown in a Github repository
+- GitHub flavored Markdown (GFM) - GitHub syntax extensions
+  - issues and pull requests: #ID or GH-ID or username/repository#ID 
+  - commits: commit url or hash or user@hash or username/repository@hash
+  - mentions: @username
+  - tasks [ ]
+  - commands: You can use slash commands in any description or comment field in issues, pull requests, or discussions where that slash command is supported.
+    - /code: code block
+    - /details: collapsible detail area
+    - /saved-replies: insert a saved reply
+    - /table: table
+    - /tasklist: insert a tasl list
+    - /template: insert a template
+#### Questions
+-  Which of the following Markdown snippets would produce the text Hello, world! in bold italics? 
+   - *Hello, *world*!*
+   - **Hello, *world*!**
+   - X  ***Hello, world!***
+   - ### Hello, world!
+- How do you print certain characters, like asterisks (*) and underscores (_), literally on your output? 
+  - Use three in a row, like *** or ___.
+  - **Escape them with a backslash, like \* or \_.**
+  - Unfortunately, this isn't supported at this time.
+- Suppose there's an HTML snippet that you want to include on your GitHub Pages web site, but Markdown doesn't offer a way to render it. What should you do? 
+  - **Just add the HTML inline.**
+  - Cut the content. If it's not supported in Markdown, then it's probably not worth including.
+  - Open an issue that requests Markdown support for your specialized scenario.
+  
 ## ToDos
 
-- [ ] the various uses of git reset as well as the pointers like HEAD and HEAD^
+- [ ] the uses of git reset as well as the pointers like HEAD and HEAD^
 - [ ] create a gist with common git commands and some scenarios for uncommon ones
 
 
