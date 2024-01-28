@@ -513,17 +513,186 @@ Questions for later review
    - X  ***Hello, world!***
    - ### Hello, world!
 - How do you print certain characters, like asterisks (*) and underscores (_), literally on your output? 
-  - Use three in a row, like *** or ___.
-  - **Escape them with a backslash, like \* or \_.**
+  - Use three in a row, like \*\*\* or ___.
+  - **Escape them with a backslash, like \* or \_.**  **
   - Unfortunately, this isn't supported at this time.
 - Suppose there's an HTML snippet that you want to include on your GitHub Pages web site, but Markdown doesn't offer a way to render it. What should you do? 
   - **Just add the HTML inline.**
   - Cut the content. If it's not supported in Markdown, then it's probably not worth including.
   - Open an issue that requests Markdown support for your specialized scenario.
-  
-## ToDos
+ 
+### 8 Contribute to an open-source project on GitHub
+- Find open-source projects and tasks on GitHub
+    - github.com/search
+    - top level documents
+        - LICENCE
+        - README
+        - CONTRIBUTING
+        - CODE_OF_CONDUCT
+    - issue tracker
+    - pull requests
+    - chat channels: slack, gitter, IRC, Discourse
+    - /contribute url https://github.com/user/project/contribute
+    - /labels url 
+        - good-first-issue
+        - help wanted
+        - begginer-friendly
+    - issues can be linked to other issues and PRs
+        - when linked to PR may say "May be fixed by #ID"
+    - sponsor a project
+- Create pull-requests
+    - fork the project
+    - clone repo
+    - optionally create branch
+    - make changes and commit
+    - push to our fork
+    - open our project on GitHub -> Compare & Pull Requests
+    - optionally create draft pull request 
+- Implement best practices for communication and code reviews
+    - check issue for assignees
+    - check for linked pull requests 
+    - commit message template: "if applied, this commit will <your subject line here>."
 
-- [ ] the uses of git reset as well as the pointers like HEAD and HEAD^
-- [ ] create a gist with common git commands and some scenarios for uncommon ones
+- Find and engage with open-source communities
+-
+#### Questions
+- What is the best place on a GitHub repository to find where you can help a project? 
+    - The README file
+    - **The issues list**
+    - The search bar
+    - The LICENSE file
+- What is the preferred way to ask for help or reviews on a pull request? 
+    - Send a negative or disrespectful comment to the project's maintainers via social media.
+    - Create an issue
+    - **Add comment in the pull request**
+    - Send an email to a random committer on the project
+- What is needed before you can create a pull request on GitHub? 
+    - Send a patch file to maintainers via email
+    - Clone a repo, commit changes, and force push
+    - Get accepted as a team member
+    - **Fork a repo, clone it, commit changes, and push to your fork**
+
+### Manage an InnerSource program by using GitHub
+- InnerSource
+    - apply open-source patterns to projects with a limited audience
+
+- User vs Organizations
+- Number of Organizations
+- Create Discoverable Repositories
+    - descriptive name
+    - concise description
+    - links to production or demo
+    - set expectations for prerequisites and deployment
+    - include references to dependencies
+    - use markdown
+- Create Robust READMEs
+- Issue and PR Templates
+    - CONTRIBUTING.md -> triggers recommendation on PRs 
+- Transparency
+    - CODEOWNERS file - .github, root or docs
+        - pattern (gitignore) @user @user
+- Meassure Success
+- Distribute InnerSource toolkit
+- Permission Levels:
+    - Read
+    - Triage: manage issues and PRs
+    - Write
+    - Maintain: no sensitive or destructive actions
+    - Admin
+- ISSUE_TEMPLATE.md
+
+#### Questions
+- Which of the following choices best describes the relationship between open source and InnerSource programs? 
+    - Anyone can offer a contribution to an open source program, whereas InnerSource programs only accept contributions from members of the team that owns the repository.
+    - InnerSource programs are forked from open source programs by organizations that only use and maintain them privately moving forward.
+    - **InnerSource programs are fundamentally the same as open source programs, except that their access is limited to people within their organization.**
+- Suppose your team has been receiving some low-quality bug reports without enough information to properly diagnose. Which of the following choices is the best way to address the issue? 
+    - Use GitHub Script to add a workflow action that automatically rejects any issues with a description fewer than 200 characters long.
+    - **Add an ISSUE_TEMPLATE.md file that includes fields for reproduction steps, system properties, and instructions for generating and including important logs.**
+    - Add a CONTRIBUTING.md file that clearly explains what's expected in bug reports, such as reproduction steps, system properties, and instructions for generating and including important logs.
+- Suppose your team has been tracking data of all kinds since your InnerSource program went live three months ago. Which of the following metrics indicates your program is a great success? 
+    - **A dramatic rise in pull requests that address bugs in your software.**
+    - A growing rate of bug reports that are quickly closed because they cannot be reproduced.
+    - A steady decline in new issues.
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
