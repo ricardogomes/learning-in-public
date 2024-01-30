@@ -572,7 +572,7 @@ Questions for later review
     - Get accepted as a team member
     - **Fork a repo, clone it, commit changes, and push to your fork**
 
-### Manage an InnerSource program by using GitHub
+### 9 Manage an InnerSource program by using GitHub
 - InnerSource
     - apply open-source patterns to projects with a limited audience
 
@@ -615,38 +615,353 @@ Questions for later review
     - A growing rate of bug reports that are quickly closed because they cannot be reproduced.
     - A steady decline in new issues.
 
+### 10 Maintain a Secure Repository by Using GitHub Best Practices
+- Identify tools and features to establish a secure development strategy
+  - Security policies, SECURITY.md, specify how to report a vulnerability
+  - Dependabot: alert when dependency has vulnerability
+  - Code Scanning: find, triage, fix vulnerabilities
+  - GitHub Security Adivsories:
+    - Maintainers privately discuss security vulnerabilities
+    - After fix they can publish the security advisor
+  - batch protection rule:
+    - define rules taht enforce a workflow for one or more branches
+  - CODEOWNERS file allows for the definition of owners of paths on the repo
+    - The owners will be required for pull-requests
+  - automated code-scanning
+    - dependabot
+    - code scanning
+    - secret scanning
+- Enable Vulnerability Dependency Detection for Private Repositories
+- Detect and Fix outdated dependencies with security vulnerabilities
+- Automate the detection of vulnerabilities - dependabot
+- Add Security policy - SECURITY.md
+- Remove a commit exposing sensitive data in a pull request
+- Keep sensitive files out of your repository by applying the use of a .gitignore file
+
+- Remove historical commits exposing sensitive data
+
+#### Questions
+- What's the best way to make sure you're integrating the most secure versions of your project dependencies? 
+  - Configure your package files to always use the latest versions of dependencies.
+  - Check each project's security details closely before adding it to your dependencies by confirming its version status across multiple advisory sites.
+  - **nable Dependabot for your repository.**
+-  Suppose one of your source projects relies on secrets kept in a folder called .secrets. You would like to make sure that the files kept in this folder on development machines aren't inadvertently committed to the repository. Which of these files best helps enforce this policy? 
+   - SECURITY.md
+   - **.gitignore**
+   - CONTRIBUTING.md
+- Suppose someone inadvertently commits a sensitive API key stored in the .secrets folder. What is the correct way to scrub that information from GitHub? 
+  - **Use git to remove the unwanted commit and update historical references. Then contact GitHub support to run garbage collection and invalidate the Git cache.**
+  - Delete the sensitive file from GitHub. Then commit an empty file to the same location to overwrite it.
+  - This is a trick question. Once you commit something to GitHub, it lives forever. That's why globally unique hashes are used to identify everything.
+
+### 11 Introduction to GitHub Administration
+- Organizational Structures and Permission Levels
+  - Repo Permissions:
+    - Read
+    - Write
+    - Triage: issues and PR
+    - Maintain: no sensitive or destructive action
+    - Admin
+  - Team Permissions:
+    - Member
+    - Maintainer
+  - Org Permissions:
+    - Owner
+    - Member
+    - Moderator: block / unblock nonmember contributors, set interaction limits, hide comments
+    - Billing Manager
+    - Security Manager
+    - Outside Collaborator
+  - Enterprise Permissions:
+    - Owner
+    - Member
+    - Billing Manager
+- Secure Authentication Strategy
+  - personal access tokens: create and tie permissions to repo or org. use in git cli
+  - ssh keys
+  - deploy keys
+  - 2FA: mobile app or SMS
+  - SAML SSO
+    - limited support for all providers that implement SAML2.0
+    - official suport for:
+      - Active Directory Federation Services (AD FS)
+      - Microsoft Entra ID
+      - Okta
+      - OneLogin
+      - PingOne
+      - Shibboleth
+  - LDAP
+    - GHES
+      - Active Directory
+      - Oracle Directory Server Enterprise Edition
+      - OpenLDAP
+      - Open Directory
+- Manage Teams ans Members using Directory Information Services
+- GitHub as an authentication provider
+- GitHub can sync teams with Identity Providers - Microsoft Entra ID
+- Members with TEAM MAINTAINER or REPOSITORY ADMIN can:
+  - create new team, select or change parent team
+  - delete or rename team
+  - add or remove org members from team | sync with IdP
+  - add or remove outside collaborators
+  - enable / disable team discussions
+  - change visibility
+  - manage automaticy code review assignment for PRs
+  - schedule reminders
+  - profile picture
+- Team-level admin
+  - create teams in org
+- Org level admin
+  - members with owner permission
+    - invite users
+    - organize users into teams
+    - add / rem ouside collaborators
+    - grant permissions
+    - set up org security
+    - set up billing
+    - extract various types of info via scripts
+    - apply org-wide changes via scripts
+  - only one org is recommended
+- Entreprise Level admin
+  - GHEC GHES
+  - enterprise owners can:
+    - enable SAML single sign-on
+    - add / rem orgs
+    - set up billing
+    - set up repo policies, project board policies, team policies
+    - extract various types of info via scripts
+    - apply org-wide changes via script
+- Protection Rules:
+  - require PR
+  - require status check to pass before merge
+  - require conversation resolution before merge
+  - require signed commits
+  - require linear history
+  - require merge queue
+  - require successful deployment before merge
+  - lock branch - read only
+  - restrict push to branches
+
+#### Questions:
+- You want to grant a user the permissions required to add and remove organization members to and from a team. Which permission would you need to grant that user? 
+  - The admin permission on a repository
+  - The maintain permission on a repository
+  - Organization billing manager
+  - **Team maintainer**
+- As an organization owner, you want to ensure that everyone who is signed in to your corporate network can access the GitHub website without requiring a second sign-in. Which technology would you enable to accomplish this? 
+  - **Single sign-on**
+  - Two-factor authentication
+  - Personal Access Tokens
+  - SSH keys
+-  What's the appropriate repository permission level for contributors who need to actively push changes to your repository? 
+    - admin
+    - **write**
+    - triage
+    - maintain
+
+### 12 Authenticate and Authorize User Identities on GitHub
+- Authentication and Authorization model
+- Manage user access
+  - Enterpise users are provisiond based in IdP and cannot interact outside the orgs
+  - max 5000 users in team
+  - max 10000 users in org
+  - max 1500 teams in org
+- Identity Providers
+- Implications of SAML SSO
+  - SCIM: System for Cross-domain Identity Management
+    - Microsoft Entra ID
+    - Okta
+    - OneLogin
+- Team Syncronization
+  - sync users
+  - sync on new team
+  - custom team/groups maps
+  - dynamic config
+- SAML SSO user logs in -> tries to access repository data -> prompted for credentials (Entreprise ID)
+- Entreprise 2FA: Security Keys, TOTP and SMS
+
+#### Questions
+
+-  What type of user authentication is used to verify a user identity against a known identity provider? 
+   - Two-factor authentication (2FA)
+   - Time-based One-time Password (TOTP)	
+   - **SAML Single Sign-on (SAML SSO)**
+   - Short Message Service (SMS)
+- You are an admin and want to enable team synchronization for your organization. What installation permissions do you need to configure team synchronization for Microsoft Entra ID? 
+  - Provide the tenant URL
+  - **Read all users’ full profiles**
+  - Generate a valid Single Sign-on for Web Systems (SSWS) token
+  - Enable SAML Single Sign-on (SSO)
+-  Where does a user authenticate after enabling SAML Single sign-on? 
+   - With a GitHub login
+   - With the organization credentials
+   - **With the Identity Provider (IdP)**
+- What two-factor authentication method supports the secure backup of your authentication codes in the cloud? 
+  - **Time-based One-time Password (TOTP)**
+  - Short Message Service (SMS)
+  - Security Key
 
 
- 
+### 13 Manage Repository Changes by using Pull Requests on GitHub
+- branches and PRs
+- Pull Request
+  - document branch changes that are ready to merge
+  - compare branch
+  - base branch - main
+  - In your review comments:
+    - Identify potential issues, risks, and limitations.
+    - Suggest changes and improvements.
+    -Share awareness of upcoming changes that the pull request doesn't account for.
+    - Ask questions to verify shared understanding.
+    - Highlight what the author did well and should keep doing.
+    - Prioritize the most important feedback.
+    - Be concise and provide meaningful detail.
+    - Treat the pull request author with kindness and empathy.
+- PR Statuses
+  - Draft
+  - Open
+  - Closed
+  - Merged
+- merges
+  - merge
+  - squash and merge
+  - rebase and merge: "this option enables you to skip a merge by maintaining a linear project history" -- check
+  
+#### Questions
+-  What is not a good reason to create a pull request? 
+   - You would like to receive feedback on prospective changes before merging your feature branch into main.
+   - You want to merge your bug fix branch into main, but don't have permission.
+   - **Your branch can't be merged into main due to upstream changes made since you created it. Creating a pull request lets the other contributor know they need to pull their changes out so you can put yours in.**
+-   How can you ensure that pull requests for a given area of the repository aren't merged unless certain users or teams approve? 
+    - Clearly explain the pull request policy in CONTRIBUTING.md.
+    - **Use a CODEOWNERS file and enable required reviews.**
+    - Add a table mapping directory paths to required users in SECURITY.md.
+- You've been requested to review a pull request. As you read through it, you notice several minor coding errors and typos. How should you handle the review? 
+  - **Start a review and fix obvious typos inline. Add comments in places that require further discussion or offer educational value. Complete the review with changes requested.**
+  - Leave single comments for each issue you come across, but don't change the code. For typos, include the correct spelling of the word as a reference. Approve the pull request if you trust the author to implement your suggestions.
+  - Reject the pull request. We can't risk any bugs accidentally being merged into an important branch.
+
+### 14 Search and Organize Repository History by Using GitHub
+- Find relevant issues and PRs
+- Search history to find context
+- Make connections within GitHub to help others
+- search filters:
+  - is:open is:issue assignee:@me
+  - is:closed is:pr author:contoso (user @contoso)
+  - is:pr keyword in:comments
+  - is:open is:issue label:bug -linked:pr (bugs without linked PRs)
+
+#### Questions
+1. How does GitHub's top-level search bar differ from the search options available on repository tabs? 
+￼
+Other than being located in different parts of the user interface, they are otherwise the same.
+￼
+They support different filter syntax options.
+￼
+The top-level search bar supports searching everything across all of GitHub, whereas the repository tab searches are scoped to cover specific types in the current repository.
+2. What does git blame do? 
+￼
+It creates a bug assigned to the last person who committed changes to the specified file.
+￼
+It displays the commit history of the file.
+￼
+It reverts the effects of a git praise command.
+3. Suppose a bug issue is reported on your project, and you know which pull request introduced the problem. Which of the following options is not a cross-linking best practice? 
+￼
+Do not create cross-links when the root cause of the issue is already known.
+￼
+Add a comment to the bug report that includes the pull request's author by using an @mention.
+￼
+Add a comment to the bug report that links the pull request to it using the #ID syntax.
+
+### Other notes:
+- GitHub Copilot
+- GitHub Projects
+- GitHub Enterprise GHES GHEC (auth) 
 
 
+### Resources to checkout
 
+* [Viewing traffic to a repository - GitHub Docs](https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository/viewing-traffic-to-a-repository)
+* [Roles in an enterprise - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/roles-in-an-enterprise)
+* [Enforcing repository management policies in your enterprise - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-on-default-repository-permissions?azure-portal=true)
+* [Using LDAP - GitHub Enterprise Server 3.8 Docs](https://docs.github.com/en/enterprise-server@3.8/admin/identity-and-access-management/using-ldap-for-enterprise-iam/using-ldap)
+* [Repository roles for an organization - GitHub Docs](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization#repository-access-for-each-permission-level?azure-portal=true)
+* [Managing your personal access tokens - GitHub Docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+* [Managing deploy keys - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys#deploy-keys)
+* [About identity and access management with SAML single sign-on - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/about-identity-and-access-management-with-saml-single-sign-on)
+* [Removing sensitive data from a repository - GitHub Docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
+* [Managing a branch protection rule - GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)
+* [GitHub security features - GitHub Docs](https://docs.github.com/en/code-security/getting-started/github-security-features)
+* [Adding a security policy to your repository - GitHub Docs](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository)
+* [Creating a default community health file - GitHub Docs](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file)
+* [About READMEs - GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
+* [About coordinated disclosure of security vulnerabilities - GitHub Docs](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/about-coordinated-disclosure-of-security-vulnerabilities#about-reporting-and-disclosing-vulnerabilities-in-projects-on-github)
+* [GitHub Security Lab | Securing the world’s software, together](https://securitylab.github.com/)
+[](https://git-scm.com/docs/everyday)
+[Git and GitHub learning resources - GitHub Docs](https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Quickstart for GitHub Discussions - GitHub Docs](https://docs.github.com/en/discussions/quickstart)
+[Repositories documentation - GitHub Docs](https://docs.github.com/en/repositories)
+[Configuring notifications - GitHub Docs](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications)
+[GitHub Pages documentation - GitHub Docs](https://docs.github.com/en/pages)
+[GitHub’s plans - GitHub Docs](https://docs.github.com/en/get-started/learning-about-github/githubs-plans)
+[Billing and payments documentation - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/billing)
+[Managing your license for GitHub Enterprise - GitHub Enterprise Server 3.11 Docs](https://docs.github.com/en/enterprise-server@3.11/billing/managing-your-license-for-github-enterprise)
+[GitHub Copilot · Your AI pair programmer](https://github.com/features/copilot)
+[About GitHub Copilot Individual - GitHub Docs](https://docs.github.com/en/copilot/overview-of-github-copilot/about-github-copilot-individual)
+[About GitHub Copilot Individual - GitHub Docs](https://docs.github.com/en/copilot/overview-of-github-copilot/about-github-copilot-individual#using-github-copilot)
+[A beginner's guide to learning to code with GitHub Codespaces - The GitHub Blog](https://github.blog/2023-02-22-a-beginners-guide-to-learning-to-code-with-github-codespaces/)
+[Developing in a codespace - GitHub Docs](https://docs.github.com/en/codespaces/developing-in-a-codespace/developing-in-a-codespace)
+[Customizing your codespace - GitHub Docs](https://docs.github.com/en/codespaces/customizing-your-codespace)
+[Using the API to manage Projects - GitHub Docs](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/using-the-api-to-manage-projects)
+[Automating Projects using Actions - GitHub Docs](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/automating-projects-using-actions)
+[Archiving items automatically - GitHub Docs](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/archiving-items-automatically)
+[On the go with GitHub Projects on GitHub Mobile (public beta) - The GitHub Blog](https://github.blog/2022-10-11-on-the-go-with-github-projects-on-github-mobile-public-beta/)
+[Basic writing and formatting syntax - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+[GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
+[Writing on GitHub - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github)
+[Autolinked references and URLs - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls)
+* [Managing SAML single sign-on for your organization - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization)
+* [Viewing and managing a member's SAML access to your organization - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/organizations/granting-access-to-your-organization-with-saml-single-sign-on/viewing-and-managing-a-members-saml-access-to-your-organization)
+* [Preparing to require two-factor authentication in your organization - GitHub Docs](https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/preparing-to-require-two-factor-authentication-in-your-organization)
+* [Authorizing a personal access token for use with SAML single sign-on - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on)
+* [Authorizing an SSH key for use with SAML single sign-on - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-an-ssh-key-for-use-with-saml-single-sign-on)
+* [Synchronizing a team with an identity provider group - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/organizations/organizing-members-into-teams/synchronizing-a-team-with-an-identity-provider-group)
+* [Organizations and teams documentation - GitHub Docs](https://docs.github.com/en/organizations)
+* [Managing team synchronization for your organization - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/managing-team-synchronization-for-your-organization)
+* [Generating a new SSH key and adding it to the ssh-agent - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+* [Requiring two-factor authentication in your organization - GitHub Docs](https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization)
+* [Enforcing policies for security settings in your enterprise - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-security-settings-in-your-enterprise#requiring-two-factor-authentication-for-organizations-in-your-enterprise?azure-portal=true)
+* [Managing teams and people with access to your repository - GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository)
+* [Assigning the team maintainer role to a team member - GitHub Docs](https://docs.github.com/en/organizations/organizing-members-into-teams/assigning-the-team-maintainer-role-to-a-team-member)
+* [Roles in an organization - GitHub Docs](https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permission-levels-for-an-organization?azure-portal=true)
+* [Setting base permissions for an organization - GitHub Docs](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/setting-base-permissions-for-an-organization)
+* [Viewing and updating Dependabot alerts - GitHub Docs](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/viewing-and-updating-dependabot-alerts)
+* [Dependabot](https://github.com/dependabot)
+* [GitHub Marketplace · Tools to improve your workflow](https://github.com/marketplace/category/security)
+* [Adding a security policy to your repository - GitHub Docs](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository)
+* [Ignoring files - GitHub Docs](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files)
+* [Removing sensitive data from a repository - GitHub Docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
+* [An introduction to innersource - GitHub Resources](https://resources.github.com/innersource/fundamentals/)
+* [GitHub Support](https://support.github.com/)
+* [GitHub Support](https://support.github.com/)
+* [Managing user access to your organization's repositories - GitHub Docs](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories)
+* [Git branching guidance - Azure Repos | Microsoft Learn](https://learn.microsoft.com/en-us/azure/devops/repos/git/git-branching-guidance?view=azure-devops)
+* [community · Discussions · GitHub](https://github.com/orgs/community/discussions/)
+* [IDEA Development Collaboration Best Practices · ideaconsult/etc Wiki](https://github.com/ideaconsult/etc/wiki/IDEA-Development-Collaboration-Best-Practices)
+* [matiassingers/awesome-readme: A curated list of awesome READMEs](https://github.com/matiassingers/awesome-readme)
+* [Credentials - ricardojpgomes | Microsoft Learn](https://learn.microsoft.com/en-us/users/ricardojpgomes/credentials/certification/nouid.457?tab=credentials-tab)
+* [Collections | Microsoft Learn](https://learn.microsoft.com/en-us/collections/o1njfe825p602p)
+* [Proposing changes to your work with pull requests - GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests)
+* [Reviewing changes in pull requests - GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests)
+* [Incorporating changes from a pull request - GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request)
+* [About code owners - GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
+* [Autolinked references and URLs - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls)
+* [RicardoGomesGithubCertificationLearning/skills-connect-the-dots: My clone repository](https://github.com/RicardoGomesGithubCertificationLearning/skills-connect-the-dots)
+* [Understanding the search syntax - GitHub Docs](https://docs.github.com/en/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax)
+* [Git - git-blame Documentation](https://git-scm.com/docs/git-blame)
+* [Viewing a file - GitHub Docs](https://docs.github.com/en/repositories/working-with-files/using-files/viewing-a-file)
 
 
 
