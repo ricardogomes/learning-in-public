@@ -23,6 +23,7 @@ Enterprise accounts manage multiple Organizations.
 GitHub Actions, Packages and Codespaces (only makes sense on personal accounts) are the features that have quatitative diferences between plans:
 
 |      			 | Free  | Pro 	  | Free Org    | Team 	       | Enterprise |
+| ---------------------- | ----	 | ---	  | --------	| ----	       | ---------  |
 | Actions min/month	 | 2.000 | 3.000  | 2. 000      | 3.000	       | 50.000	    |
 | Packages Storage/month | 500MB | 2GB	  | 500MB	| 2GB 	       | 50GB	    |
 | Codespaces hours/month | 120	 | 180	  | N.A.	| N.A	       | N.A	    |
