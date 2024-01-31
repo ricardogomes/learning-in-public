@@ -905,7 +905,7 @@ Add a comment to the bug report that links the pull request to it using the #ID 
 [Git and GitHub learning resources - GitHub Docs](https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources)
 * [Quickstart for GitHub Discussions - GitHub Docs](https://docs.github.com/en/discussions/quickstart)
 * [Repositories documentation - GitHub Docs](https://docs.github.com/en/repositories)
-* [Configuring notifications - GitHub Docs](https://docs.github.com/en/account-and-profile/managing-subscriptio* ns-and-notifications-on-github/setting-up-notifications/configuring-notifications)
+* [Configuring notifications - GitHub Docs](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications)
 * [GitHub Pages documentation - GitHub Docs](https://docs.github.com/en/pages)
 * [Billing and payments documentation - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/billing)
 * [Managing your license for GitHub Enterprise - GitHub Enterprise Server 3.11 Docs](https://docs.github.com/en/enterprise-server@3.11/billing/managing-your-license-for-github-enterprise)
