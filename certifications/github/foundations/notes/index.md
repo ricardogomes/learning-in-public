@@ -358,7 +358,7 @@ Questions for later review
 - GitHub Codespaces lifecycle:
     - Creating a Codespace
         - Can be done in GitHub.com, VSCode or GitHub CLI
-        - From a GitHub template or any tempalte repository on GitHub.com to start a new project
+        - From a GitHub template or any template repository on GitHub.com to start a new project
         - From a branch in a repository
         - From an open pull request
         - From a commit in the commit history
@@ -860,18 +860,17 @@ They support different filter syntax options.
 ￼
 The top-level search bar supports searching everything across all of GitHub, whereas the repository tab searches are scoped to cover specific types in the current repository.
 2. What does git blame do? 
-￼
 It creates a bug assigned to the last person who committed changes to the specified file.
-￼
+
 It displays the commit history of the file.
-￼
+
 It reverts the effects of a git praise command.
 3. Suppose a bug issue is reported on your project, and you know which pull request introduced the problem. Which of the following options is not a cross-linking best practice? 
-￼
+
 Do not create cross-links when the root cause of the issue is already known.
-￼
+
 Add a comment to the bug report that includes the pull request's author by using an @mention.
-￼
+
 Add a comment to the bug report that links the pull request to it using the #ID syntax.
 
 ### Other notes:
@@ -883,6 +882,24 @@ Add a comment to the bug report that links the pull request to it using the #ID 
 ### Resources to checkout
 #### Reviewed
 * [GitHub’s plans - GitHub Docs](https://docs.github.com/en/get-started/learning-about-github/githubs-plans)
+* [About repositories - GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories)
+* [About commits - GitHub Docs](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/about-commits)
+* [About branches - GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)
+* [About remote repositories - GitHub Docs](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories)
+* [About forks - GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks)
+* [About issues - GitHub Docs](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues)
+* [About discussions - GitHub Docs](https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions)
+* [Managing labels - GitHub Docs](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels)
+* [About Projects - GitHub Docs](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
+* [About wikis - GitHub Docs](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis)
+* [About notifications - GitHub Docs](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/about-notifications)
+* [About pull requests - GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
+* [Creating gists - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists)
+* [Git Everyday](https://git-scm.com/docs/everyday)
+* [About GitHub Pages - GitHub Docs](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages)
+* [GitHub flow - GitHub Docs](https://docs.github.com/en/get-started/using-github/github-flow)
+* [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
+
 
 #### TODO
 * [Viewing traffic to a repository - GitHub Docs](https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository/viewing-traffic-to-a-repository)
@@ -901,17 +918,10 @@ Add a comment to the bug report that links the pull request to it using the #ID 
 * [About READMEs - GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
 * [About coordinated disclosure of security vulnerabilities - GitHub Docs](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/about-coordinated-disclosure-of-security-vulnerabilities#about-reporting-and-disclosing-vulnerabilities-in-projects-on-github)
 * [GitHub Security Lab | Securing the world’s software, together](https://securitylab.github.com/)
-[Git Everyday](https://git-scm.com/docs/everyday)
-[Git and GitHub learning resources - GitHub Docs](https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources)
-* [Quickstart for GitHub Discussions - GitHub Docs](https://docs.github.com/en/discussions/quickstart)
-* [Repositories documentation - GitHub Docs](https://docs.github.com/en/repositories)
-* [Configuring notifications - GitHub Docs](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications)
-* [GitHub Pages documentation - GitHub Docs](https://docs.github.com/en/pages)
 * [Billing and payments documentation - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/billing)
 * [Managing your license for GitHub Enterprise - GitHub Enterprise Server 3.11 Docs](https://docs.github.com/en/enterprise-server@3.11/billing/managing-your-license-for-github-enterprise)
 * [GitHub Copilot · Your AI pair programmer](https://github.com/features/copilot)
 * [About GitHub Copilot Individual - GitHub Docs](https://docs.github.com/en/copilot/overview-of-github-copilot/about-github-copilot-individual)
-* [About GitHub Copilot Individual - GitHub Docs](https://docs.github.com/en/copilot/overview-of-github-copilot/about-github-copilot-individual#using-github-copilot)
 * [A beginner's guide to learning to code with GitHub Codespaces - The GitHub Blog](https://github.blog/2023-02-22-a-beginners-guide-to-learning-to-code-with-github-codespaces/)
 * [Developing in a codespace - GitHub Docs](https://docs.github.com/en/codespaces/developing-in-a-codespace/developing-in-a-codespace)
 * [Customizing your codespace - GitHub Docs](https://docs.github.com/en/codespaces/customizing-your-codespace)
@@ -920,7 +930,7 @@ Add a comment to the bug report that links the pull request to it using the #ID 
 * [Archiving items automatically - GitHub Docs](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/archiving-items-automatically)
 * [On the go with GitHub Projects on GitHub Mobile (public beta) - The GitHub Blog](https://github.blog/2022-10-11-on-the-go-with-github-projects-on-github-mobile-public-beta/)
 * [Basic writing and formatting syntax - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-* [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
+
 * [Writing on GitHub - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github)
 * [Autolinked references and URLs - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls)
 * [Managing SAML single sign-on for your organization - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization)
@@ -936,7 +946,7 @@ Add a comment to the bug report that links the pull request to it using the #ID 
 * [Enforcing policies for security settings in your enterprise - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-security-settings-in-your-enterprise#requiring-two-factor-authentication-for-organizations-in-your-enterprise?azure-portal=true)
 * [Managing teams and people with access to your repository - GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository)
 * [Assigning the team maintainer role to a team member - GitHub Docs](https://docs.github.com/en/organizations/organizing-members-into-teams/assigning-the-team-maintainer-role-to-a-team-member)
-* [Roles in an organization - GitHub Docs](https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization#permission-levels-for-an-organization?azure-portal=true)
+* [Roles in an organization - GitHub Docs](https://docs.github.com/en/organizations/managing-peoples-access-to- your-organization-with-roles/roles-in-an-organization#permission-levels-for-an-organization?azure-portal=true)
 * [Setting base permissions for an organization - GitHub Docs](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/setting-base-permissions-for-an-organization)
 * [Viewing and updating Dependabot alerts - GitHub Docs](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/viewing-and-updating-dependabot-alerts)
 * [Dependabot](https://github.com/dependabot)
@@ -946,20 +956,16 @@ Add a comment to the bug report that links the pull request to it using the #ID 
 * [Removing sensitive data from a repository - GitHub Docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
 * [An introduction to innersource - GitHub Resources](https://resources.github.com/innersource/fundamentals/)
 * [GitHub Support](https://support.github.com/)
-* [GitHub Support](https://support.github.com/)
 * [Managing user access to your organization's repositories - GitHub Docs](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories)
 * [Git branching guidance - Azure Repos | Microsoft Learn](https://learn.microsoft.com/en-us/azure/devops/repos/git/git-branching-guidance?view=azure-devops)
 * [community · Discussions · GitHub](https://github.com/orgs/community/discussions/)
 * [IDEA Development Collaboration Best Practices · ideaconsult/etc Wiki](https://github.com/ideaconsult/etc/wiki/IDEA-Development-Collaboration-Best-Practices)
 * [matiassingers/awesome-readme: A curated list of awesome READMEs](https://github.com/matiassingers/awesome-readme)
-* [Credentials - ricardojpgomes | Microsoft Learn](https://learn.microsoft.com/en-us/users/ricardojpgomes/credentials/certification/nouid.457?tab=credentials-tab)
-* [Collections | Microsoft Learn](https://learn.microsoft.com/en-us/collections/o1njfe825p602p)
 * [Proposing changes to your work with pull requests - GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests)
 * [Reviewing changes in pull requests - GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests)
 * [Incorporating changes from a pull request - GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request)
 * [About code owners - GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
 * [Autolinked references and URLs - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls)
-* [RicardoGomesGithubCertificationLearning/skills-connect-the-dots: My clone repository](https://github.com/RicardoGomesGithubCertificationLearning/skills-connect-the-dots)
 * [Understanding the search syntax - GitHub Docs](https://docs.github.com/en/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax)
 * [Git - git-blame Documentation](https://git-scm.com/docs/git-blame)
 * [Viewing a file - GitHub Docs](https://docs.github.com/en/repositories/working-with-files/using-files/viewing-a-file)
